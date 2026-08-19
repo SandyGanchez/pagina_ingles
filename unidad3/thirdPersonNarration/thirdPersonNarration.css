@@ -5,6 +5,53 @@
 
 
 /* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+.section-heading {
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-heading h2 {
+
+    color: var(--bs-heading-color);
+
+    font-weight: 700;
+
+}
+
+
+.section-heading p {
+
+    max-width: 720px;
+
+    margin: 10px auto 0;
+
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    color: var(--bs-info);
+
+    font-weight: 700;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* =====================================================
    HERO
 ===================================================== */
 
@@ -428,11 +475,18 @@
 }
 
 
-.pronoun-table-card thead {
+/* Bootstrap repaints every cell with its own background
+   and colour, so the header has to be styled on the <th>
+   itself. Styling only <thead> leaves the teal covered by
+   white and the white text invisible on top of it. */
+
+.pronoun-table-card thead th {
 
     background-color: var(--bs-info);
 
     color: #fff;
+
+    box-shadow: none;
 
 }
 
