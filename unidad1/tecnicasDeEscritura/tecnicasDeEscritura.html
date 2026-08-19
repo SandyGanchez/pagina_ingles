@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Techniques - English Course</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bootstrap/english-course.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for dynamic animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        .card-custom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+        }
+        .card-custom:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        }
+        .badge-technique {
+            font-size: 0.9rem;
+            padding: 0.5em 0.8em;
+            border-radius: 20px;
+        }
+        .example-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            border-radius: 0 8px 8px 0;
+        }
+        .pulse-icon {
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-5 shadow-sm animate__animated animate__fadeInDown">
+        <div class="container">
+            <h1 class="display-4 fw-bold">
+                <i class="fa-solid fa-pen-nib pulse-icon me-2"></i> Writing Techniques
+            </h1>
+            <p class="lead mb-0">Learn key strategies to make your English texts engaging, clear, and dynamic.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        
+        <!-- Introduction Banner -->
+        <section class="card shadow-sm p-4 mb-5 border-0 rounded-3 animate__animated animate__fadeIn">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center text-primary mb-3 mb-md-0">
+                    <i class="fa-solid fa-lightbulb fa-4x"></i>
+                </div>
+                <div class="col-md-10">
+                    <h3 class="fw-bold text-dark">Why use Writing Techniques?</h3>
+                    <p class="card-text text-muted">
+                        Writing techniques are used to make texts more interesting, clear, and appealing to the reader. They help bring the message closer to the audience, making it dynamic and easy to understand.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques Cards Grid -->
+        <div class="row g-4">
+
+            <!-- Technique 1 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <div class="card h-100 shadow-sm card-custom p-3">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary badge-technique me-2">Technique 01</span>
+                            <i class="fa-solid fa-user-gear text-primary ms-auto fs-4"></i>
+                        </div>
+                        <h4 class="card-title fw-bold text-primary">1. Address the Reader Directly</h4>
+                        <p class="card-text text-secondary small">
+                            Speak directly to the reader using personal pronouns like <strong>"You"</strong> or possessive adjectives like <strong>"Your"</strong>.
+                        </p>
+                        <h6 class="fw-bold mt-2"><i class="fa-solid fa-bullseye me-1"></i> Purpose:</h6>
+                        <ul class="text-muted small ps-3">
+                            <li>To create closeness with the reader.</li>
+                            <li>To make the reader feel included.</li>
+                            <li>To give advice, instructions, or opinions.</li>
+                        </ul>
+                        <div class="example-box p-3 mt-auto">
+                            <span class="fw-bold text-dark d-block mb-1"><i class="fa-solid fa-quote-left text-primary me-1"></i> Example:</span>
+                            <i class="text-primary fw-semibold">"You should drink less coffee before bed."</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technique 2 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="card h-100 shadow-sm card-custom p-3">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-success badge-technique me-2">Technique 02</span>
+                            <i class="fa-solid fa-comments text-success ms-auto fs-4"></i>
+                        </div>
+                        <h4 class="card-title fw-bold text-success">2. Use Direct Speech</h4>
+                        <p class="card-text text-secondary small">
+                            Replicate exact words spoken by a person using quotation marks (<strong>" "</strong>). Works in third-person perspective.
+                        </p>
+                        <h6 class="fw-bold mt-2"><i class="fa-solid fa-bullseye me-1"></i> Purpose:</h6>
+                        <ul class="text-muted small ps-3">
+                            <li>To make the text feel more realistic and dynamic.</li>
+                            <li>To show real conversations or thoughts.</li>
+                            <li>To attract the reader's attention instantly.</li>
+                        </ul>
+                        <div class="example-box p-3 mt-auto border-success" style="border-left-color: #198754 !important;">
+                            <span class="fw-bold text-dark d-block mb-1"><i class="fa-solid fa-quote-left text-success me-1"></i> Example:</span>
+                            <i class="text-success fw-semibold">"I don't understand the teacher," Luis Angel said.</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technique 3 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="card h-100 shadow-sm card-custom p-3">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning text-dark badge-technique me-2">Technique 03</span>
+                            <i class="fa-solid fa-circle-question text-warning ms-auto fs-4"></i>
+                        </div>
+                        <h4 class="card-title fw-bold text-warning">3. Ask Rhetorical Questions</h4>
+                        <p class="card-text text-secondary small">
+                            Questions that do not require an answer because the response is self-evident or obvious.
+                        </p>
+                        <h6 class="fw-bold mt-2"><i class="fa-solid fa-bullseye me-1"></i> Purpose:</h6>
+                        <ul class="text-muted small ps-3">
+                            <li>To capture the reader's immediate attention.</li>
+                            <li>To introduce a new topic smoothy.</li>
+                            <li>To make the reader reflect on a subject.</li>
+                        </ul>
+                        <div class="example-box p-3 mt-auto border-warning" style="border-left-color: #ffc107 !important;">
+                            <span class="fw-bold text-dark d-block mb-1"><i class="fa-solid fa-quote-left text-warning me-1"></i> Example:</span>
+                            <i class="text-warning fw-semibold text-dark">"Who doesn't like learning in a fun way?"</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Interactive Quick Practice Section -->
+        <section class="card shadow-sm p-4 mt-5 border-0 rounded-3 bg-white">
+            <h4 class="fw-bold text-dark mb-3"><i class="fa-solid fa-laptop-code text-primary me-2"></i> Summary Overview</h4>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Technique</th>
+                            <th>Key Identifiers</th>
+                            <th>Main Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Address the Reader Directly</td>
+                            <td>Pronouns: <code>you</code>, <code>your</code></td>
+                            <td>Creating a direct personal connection</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Direct Speech</td>
+                            <td>Quotation marks <code>"..."</code>, 3rd person narration</td>
+                            <td>Realism and dynamic dialogue</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Rhetorical Questions</td>
+                            <td>Question marks <code>?</code> without expecting answers</td>
+                            <td>Engagement and reflection</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-muted border-top mt-5 bg-white">
+        <p class="mb-0">English Course - Unit 1: Writing Techniques</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
