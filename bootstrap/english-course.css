@@ -1,0 +1,336 @@
+/* ================= GENERAL ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+.section-title {
+    color: var(--bs-heading-color);
+    font-weight: 700;
+}
+
+.section-subtitle {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.navbar .nav-link {
+    transition: 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--bs-primary) !important;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    background-color: var(--bs-primary);
+    color: #fff;
+    min-height: 320px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative circles */
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.10);
+
+    top: -170px;
+    right: -80px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.08);
+
+    bottom: -110px;
+    left: -60px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    font-size: 0.9rem;
+}
+
+.hero-title {
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0;
+}
+
+
+/* ================= LEARNING CARDS ================= */
+
+.learning-card {
+    height: 100%;
+
+    background-color: var(--bs-body-bg);
+
+    border: 1px solid var(--bs-primary-border-subtle);
+
+    border-radius: var(--bs-border-radius-lg);
+
+    padding: 30px;
+
+    transition: all 0.25s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--bs-box-shadow);
+
+    border-color: var(--bs-primary);
+}
+
+.learning-icon {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+
+/* ================= UNIT HEADERS ================= */
+
+.unit-header {
+    border-radius: var(--bs-border-radius-lg);
+
+    padding: 28px;
+
+    margin-bottom: 30px;
+
+    color: #fff;
+
+    box-shadow: var(--bs-box-shadow);
+}
+
+
+/* Unit 1 - Primary */
+
+.unit-1 {
+    background-color: var(--bs-primary);
+}
+
+
+/* Unit 2 - Secondary */
+
+.unit-2 {
+    background-color: var(--bs-secondary);
+}
+
+
+/* Unit 3 - Info */
+
+.unit-3 {
+    background-color: var(--bs-info);
+}
+
+
+/* ================= TOPIC CARDS ================= */
+
+.topic-card {
+    height: 100%;
+
+    border: 1px solid var(--bs-border-color);
+
+    border-radius: var(--bs-border-radius-lg);
+
+    background-color: #fff;
+
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--bs-box-shadow-lg);
+
+    border-color: var(--bs-primary);
+}
+
+.topic-card .card-body {
+    padding: 25px;
+}
+
+.topic-card h5 {
+    color: var(--bs-heading-color);
+    font-weight: 700;
+}
+
+.topic-card p {
+    color: var(--bs-body-color);
+}
+
+
+/* ================= TOPIC NUMBERS ================= */
+
+.topic-number {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.number-primary {
+    background-color: var(--bs-primary);
+}
+
+.number-secondary {
+    background-color: var(--bs-secondary);
+}
+
+.number-info {
+    background-color: var(--bs-info);
+}
+
+
+/* ================= TOPIC BUTTONS ================= */
+
+.topic-card .btn {
+    border-radius: 50px;
+
+    transition: all 0.2s ease;
+}
+
+.topic-card .btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ================= SPECIAL TOPICS ================= */
+
+.special-section {
+    background-color: var(--bs-warning-bg-subtle);
+
+    border: 1px solid var(--bs-warning-border-subtle);
+
+    border-radius: var(--bs-border-radius-lg);
+
+    padding: 40px;
+}
+
+.special-icon {
+    font-size: 3rem;
+}
+
+
+/* ================= BACK TO TOP ================= */
+
+.back-top {
+    border-radius: 50px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    background-color: var(--bs-dark);
+
+    color: #fff;
+}
+
+.site-footer h5 {
+    font-weight: 700;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.75);
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: var(--bs-primary);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 260px;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .unit-header {
+        padding: 22px;
+    }
+
+    .special-section {
+        padding: 25px;
+    }
+
+}

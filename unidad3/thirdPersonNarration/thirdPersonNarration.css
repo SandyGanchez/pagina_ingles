@@ -1,0 +1,955 @@
+/* =====================================================
+   THIRD-PERSON NARRATION
+   Specific Page Styles
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.narration-hero {
+
+    background-color: var(--bs-info);
+
+    color: #fff;
+
+    min-height: 320px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.narration-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 240px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.12);
+
+    top: -90px;
+
+    right: 8%;
+
+}
+
+
+.narration-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+
+    height: 170px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.10);
+
+    bottom: -80px;
+
+    left: 7%;
+
+}
+
+
+.narration-hero .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.narration-hero h1 {
+
+    font-size: clamp(2.4rem, 6vw, 4rem);
+
+    font-weight: 800;
+
+    margin-top: 18px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.narration-hero p {
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+}
+
+
+.narration-badge {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    background-color: rgba(255, 255, 255, 0.18);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+/* =====================================================
+   DEFINITION
+===================================================== */
+
+.definition-card {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background-color: var(--bs-light);
+
+    border: 1px solid rgba(108, 195, 213, 0.25);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.definition-card p {
+
+    line-height: 1.8;
+
+}
+
+
+.pronoun-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    margin: 35px 0;
+
+}
+
+
+.pronoun-box > div {
+
+    min-width: 120px;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background-color: var(--bs-info);
+
+    color: #fff;
+
+    text-align: center;
+
+}
+
+
+.pronoun-box span {
+
+    display: block;
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+}
+
+
+.pronoun-box small {
+
+    display: block;
+
+    margin-top: 5px;
+
+}
+
+
+
+/* =====================================================
+   PURPOSE CARDS
+===================================================== */
+
+.purpose-card {
+
+    height: 100%;
+
+    padding: 30px 22px;
+
+    border-radius: 18px;
+
+    background-color: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.purpose-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.purpose-icon {
+
+    font-size: 2.3rem;
+
+    margin-bottom: 15px;
+
+}
+
+
+.purpose-card h5 {
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+}
+
+
+.purpose-card p {
+
+    margin-bottom: 0;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   CHARACTERISTICS
+===================================================== */
+
+.characteristic-card {
+
+    height: 100%;
+
+    padding: 28px;
+
+    border-left: 5px solid var(--bs-info);
+
+    border-radius: 12px;
+
+    background-color: var(--bs-light);
+
+}
+
+
+.characteristic-card h5 {
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+}
+
+
+.characteristic-card p {
+
+    margin-bottom: 0;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   NARRATOR TYPES
+===================================================== */
+
+.narrator-card {
+
+    height: 100%;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background-color: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.narrator-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.narrator-icon {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 15px;
+
+}
+
+
+.narrator-tag {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 50px;
+
+    background-color: var(--bs-info);
+
+    color: #fff;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.narrator-card h4 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.narrator-card p {
+
+    line-height: 1.7;
+
+}
+
+
+.narrator-example {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background-color: #eef9fb;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   PRONOUN TABLE
+===================================================== */
+
+.pronoun-table-card {
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.pronoun-table-card thead {
+
+    background-color: var(--bs-info);
+
+    color: #fff;
+
+}
+
+
+.pronoun-table-card th {
+
+    padding: 16px;
+
+}
+
+
+.pronoun-table-card td {
+
+    padding: 16px;
+
+}
+
+
+
+/* =====================================================
+   WRITING STEPS
+===================================================== */
+
+.steps-container {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+}
+
+
+.writing-step {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 22px;
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    background-color: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+
+}
+
+
+.step-number {
+
+    min-width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--bs-info);
+
+    color: #fff;
+
+    font-weight: 800;
+
+}
+
+
+.writing-step h4 {
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.writing-step p {
+
+    margin-bottom: 0;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example-card {
+
+    height: 100%;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background-color: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.example-tag {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    margin-bottom: 15px;
+
+    border-radius: 50px;
+
+    background-color: #eef9fb;
+
+    color: #398a9b;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+}
+
+
+.example-card h4 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.example-card p {
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.story-card {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background-color: #fff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
+
+}
+
+
+.story-header {
+
+    padding: 30px;
+
+    background-color: var(--bs-info);
+
+    color: #fff;
+
+}
+
+
+.story-header span {
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.story-header h3 {
+
+    margin: 12px 0 0;
+
+    font-weight: 800;
+
+}
+
+
+.story-body {
+
+    padding: 35px;
+
+}
+
+
+.story-body p {
+
+    line-height: 1.9;
+
+}
+
+
+.story-analysis {
+
+    padding: 25px 35px;
+
+    background-color: var(--bs-light);
+
+}
+
+
+.story-analysis h5 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.story-analysis li {
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* =====================================================
+   QUIZ CARDS
+===================================================== */
+
+.quiz-card {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    background-color: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+}
+
+
+.quiz-card h4 {
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+
+}
+
+
+.quiz-options {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+
+.quiz-options .btn {
+
+    min-width: 130px;
+
+    border-radius: 50px;
+
+}
+
+
+
+/* =====================================================
+   TRANSFORM OPTIONS
+===================================================== */
+
+.transform-option {
+
+    padding: 18px 22px;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    border: 2px solid #e5e5e5;
+
+    background-color: #fff;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.transform-option:hover {
+
+    background-color: #eef9fb;
+
+    border-color: var(--bs-info);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* =====================================================
+   QUIZ RESULTS
+===================================================== */
+
+.quiz-result {
+
+    min-height: 28px;
+
+    font-weight: 600;
+
+}
+
+
+.quiz-result.correct {
+
+    color: var(--bs-success);
+
+}
+
+
+.quiz-result.incorrect {
+
+    color: var(--bs-danger);
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .narration-hero {
+
+        min-height: 260px;
+
+        text-align: center;
+
+    }
+
+
+    .narration-hero h1 {
+
+        font-size: 2.4rem;
+
+    }
+
+
+    .narration-hero p {
+
+        font-size: 1rem;
+
+    }
+
+
+    .definition-card {
+
+        padding: 25px;
+
+    }
+
+
+    .pronoun-box {
+
+        gap: 12px;
+
+    }
+
+
+    .pronoun-box > div {
+
+        min-width: 100px;
+
+        padding: 16px;
+
+    }
+
+
+    .writing-step {
+
+        gap: 15px;
+
+        padding: 20px;
+
+    }
+
+
+    .story-body {
+
+        padding: 25px;
+
+    }
+
+
+    .story-analysis {
+
+        padding: 22px 25px;
+
+    }
+
+
+    .quiz-card {
+
+        padding: 25px 18px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .narration-hero h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .narration-badge {
+
+        font-size: 0.72rem;
+
+    }
+
+
+    .pronoun-box {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .pronoun-box > div {
+
+        width: 100%;
+
+        max-width: 180px;
+
+    }
+
+
+    .writing-step {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        align-items: center;
+
+    }
+
+
+    .quiz-options {
+
+        flex-direction: column;
+
+    }
+
+
+    .quiz-options .btn {
+
+        width: 100%;
+
+    }
+
+}
