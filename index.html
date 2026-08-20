@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <!-- Custom project styles -->
     <link rel="stylesheet" href="bootstrap/english-course.css">
+    <!-- Bootstrap -->
+
+
+<!-- Project animations -->
+
 </head>
 
 <body>
@@ -63,18 +68,87 @@
     <!-- =====================================================
          HERO SECTION
     ====================================================== -->
-    <header id="home" class="hero">
-        <div class="container hero-content">
-            <span class="hero-badge">
-                ✨ English Course 2026
-            </span>
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
+<header id="home" class="hero">
 
-            <h1 class="hero-title display-3 mt-3">
-                Learn English.<br>
-                Improve Your Skills.
-            </h1>
+    <!-- Fondo retro -->
+    <div class="retro-grid"></div>
+
+    <!-- Letras flotantes generadas con JavaScript -->
+    <div class="floating-letters" aria-hidden="true"></div>
+
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- =========================================
+                 LEFT SIDE - TEXT
+            ========================================== -->
+            <div class="col-12 col-lg-7">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        English Course 2026
+                    </span>
+
+                    <h1 class="hero-title display-3 mt-3">
+
+                        <span class="retro-line">
+                            Learn English.
+                        </span>
+
+                        <span class="retro-line">
+                            Improve Your Skills.
+                        </span>
+
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 RIGHT SIDE - TEACHER
+            ========================================== -->
+            <div class="col-12 col-lg-5">
+
+                <div class="teacher-wrapper">
+
+                    <!-- Normal teacher -->
+                    <img
+                        src="img/teacher/teacher-normal.png"
+                        alt="English teacher holding books"
+                        class="teacher-image teacher-normal"
+                    >
+
+                    <!-- Teacher winking -->
+                    <img
+                        src="img/teacher/teacher-wink.png"
+                        alt=""
+                        class="teacher-image teacher-wink"
+                        aria-hidden="true"
+                    >
+
+                </div>
+
+            </div>
+
         </div>
-    </header>
+
+    </div>
+
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" aria-hidden="true">
+        SCROLL ↓
+    </div>
+
+</header>
 
     <!-- =====================================================
          INTRODUCTION
@@ -652,7 +726,7 @@
     <section class="py-5">
         <div class="container text-center">
 
-            <h2 class="section-title"> Keep Learning, Keep Improving! ✨ </h2>
+            <h2 class="section-title"> Keep Learning, Keep Improving! </h2>
 
             <p class="section-subtitle mt-3">
                 Explore each unit, review the topics,
@@ -673,7 +747,7 @@
 
                 <small>
                     © 2026 English Learning Course. </br>
-                    Created for educational purposes.
+                  
                 </small>
 
             </div>
@@ -685,6 +759,10 @@
          BOOTSTRAP JAVASCRIPT
     ====================================================== -->
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
-
+<script src="js/hero-text.js"></script>
+<script src="js/floating-letters.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/teacher-animation.js"></script>
 </body>
 </html>

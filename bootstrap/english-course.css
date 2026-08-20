@@ -334,3 +334,690 @@ body {
     }
 
 }
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --retro-dark: #20252d;
+    --retro-paper: #fffdf7;
+    --retro-line: rgba(32, 37, 45, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--retro-paper);
+    color: var(--retro-dark);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+    transition:
+        padding 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.navbar.navbar-scrolled {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    color: var(--retro-dark) !important;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.navbar .nav-link {
+    color: var(--retro-dark) !important;
+    font-weight: 600;
+
+    position: relative;
+}
+
+.navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--bs-primary);
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 60%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 92svh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(120, 194, 173, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(243, 150, 154, 0.25),
+            transparent 35%
+        ),
+        var(--retro-paper);
+}
+
+
+/* Retro grid */
+
+.retro-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.5;
+
+    background-image:
+        linear-gradient(
+            var(--retro-line) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            var(--retro-line) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+}
+
+
+/* Content */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 0.6rem 1rem;
+
+    border: 2px solid var(--retro-dark);
+    border-radius: 50px;
+
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+
+    background: var(--bs-primary);
+
+    box-shadow: 4px 4px 0 var(--retro-dark);
+}
+
+
+/* Main title */
+
+.hero-title {
+    max-width: 1100px;
+
+    margin-top: 2rem !important;
+
+    font-size: clamp(3.4rem, 9vw, 8.5rem);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.07em;
+
+    color: var(--retro-dark);
+}
+
+.retro-line {
+    display: block;
+    white-space: nowrap;
+}
+
+
+/* Individual characters */
+
+.retro-char {
+    display: inline-block;
+
+    opacity: 0;
+
+    transform:
+        translateY(60px)
+        rotate(8deg);
+
+    animation:
+        retroLetterIn 0.7s
+        cubic-bezier(0.2, 0.8, 0.2, 1)
+        forwards;
+}
+
+
+@keyframes retroLetterIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(60px)
+            rotate(8deg);
+    }
+
+    70% {
+        transform:
+            translateY(-7px)
+            rotate(-2deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+}
+
+
+/* Scroll text */
+
+.hero-scroll {
+    position: absolute;
+
+    right: 3rem;
+    bottom: 2rem;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    letter-spacing: 0.2em;
+
+    writing-mode: vertical-rl;
+
+    animation: scrollRetro 1.5s infinite alternate ease-in-out;
+}
+
+
+@keyframes scrollRetro {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================================================
+   FLOATING LETTERS
+========================================================= */
+
+.floating-letters {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.floating-letter {
+    position: absolute;
+
+    font-family: "Courier New", monospace;
+
+    font-weight: 900;
+
+    color: rgba(32, 37, 45, 0.08);
+
+    user-select: none;
+
+    animation:
+        floatingLetter var(--duration)
+        ease-in-out infinite alternate;
+}
+
+@keyframes floatingLetter {
+
+    from {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(var(--rotation));
+    }
+
+    to {
+        transform:
+            translate3d(20px, -35px, 0)
+            rotate(calc(var(--rotation) + 15deg));
+    }
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.retro-marquee {
+    overflow: hidden;
+
+    padding: 0.85rem 0;
+
+    background: var(--retro-dark);
+
+    color: white;
+
+    border-top: 4px solid var(--bs-primary);
+    border-bottom: 4px solid var(--bs-secondary);
+
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.retro-marquee-track {
+    width: max-content;
+
+    white-space: nowrap;
+
+    animation: marqueeRetro 22s linear infinite;
+}
+
+@keyframes marqueeRetro {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section {
+    position: relative;
+
+    scroll-margin-top: 85px;
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+
+    font-weight: 900;
+
+    letter-spacing: -0.05em;
+}
+
+.section-subtitle {
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.learning-card,
+.topic-card {
+    height: 100%;
+
+    background: white;
+
+    border: 2px solid var(--retro-dark);
+
+    border-radius: 18px;
+
+    box-shadow: 6px 6px 0 var(--retro-dark);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.learning-card {
+    padding: 2rem;
+}
+
+.topic-card .card-body {
+    padding: 2rem;
+}
+
+.learning-card:hover,
+.topic-card:hover {
+
+    transform: translate(-4px, -4px);
+
+    box-shadow:
+        10px 10px 0 var(--retro-dark);
+}
+
+.learning-icon {
+    font-size: 2.7rem;
+
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   TOPIC NUMBERS
+========================================================= */
+
+.topic-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 1.2rem;
+
+    border: 2px solid var(--retro-dark);
+    border-radius: 50%;
+
+    font-family: "Courier New", monospace;
+
+    font-weight: 900;
+
+    box-shadow: 3px 3px 0 var(--retro-dark);
+}
+
+.number-primary {
+    background: var(--bs-primary);
+}
+
+.number-secondary {
+    background: var(--bs-secondary);
+}
+
+.number-info {
+    background: var(--bs-info);
+}
+
+
+/* =========================================================
+   UNIT HEADERS
+========================================================= */
+
+.unit-header {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 3rem;
+
+    padding: clamp(2rem, 5vw, 4rem);
+
+    border: 2px solid var(--retro-dark);
+
+    border-radius: 24px;
+
+    box-shadow: 8px 8px 0 var(--retro-dark);
+}
+
+.unit-header h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    font-weight: 900;
+
+    letter-spacing: -0.05em;
+}
+
+.unit-1 {
+    background: var(--bs-primary);
+}
+
+.unit-2 {
+    background: var(--bs-secondary);
+}
+
+.unit-3 {
+    background: var(--bs-info);
+}
+
+
+/* =========================================================
+   SPECIAL
+========================================================= */
+
+.special-section {
+    overflow: hidden;
+
+    padding: clamp(2rem, 5vw, 4rem);
+
+    border: 2px solid var(--retro-dark);
+
+    border-radius: 24px;
+
+    background: var(--bs-warning);
+
+    box-shadow: 8px 8px 0 var(--retro-dark);
+}
+
+.special-icon {
+    font-size: clamp(4rem, 10vw, 8rem);
+
+    animation: specialStar 3s ease-in-out infinite;
+}
+
+@keyframes specialStar {
+
+    0%,
+    100% {
+        transform: rotate(-8deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(8deg) scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.reveal-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: var(--retro-dark);
+
+    color: white;
+
+    border-top: 6px solid var(--bs-primary);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .hero {
+        min-height: 80svh;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 16vw, 5rem);
+    }
+
+    .retro-line {
+        white-space: normal;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .floating-letter {
+        opacity: 0.55;
+    }
+
+    .unit-header {
+        text-align: center;
+    }
+
+    .learning-card,
+    .topic-card {
+        box-shadow: 4px 4px 0 var(--retro-dark);
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+/* =========================================================
+   TEACHER
+========================================================= */
+
+.teacher-wrapper {
+    position: relative;
+    width: min(100%, 520px);
+    margin-inline: auto;
+
+    animation: teacherFloat 4s ease-in-out infinite;
+}
+
+.teacher-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.teacher-wink {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+
+    transition: opacity 0.08s ease;
+}
+
+
+/* Wink state */
+
+.teacher-wrapper.is-winking .teacher-normal {
+    opacity: 0;
+}
+
+.teacher-wrapper.is-winking .teacher-wink {
+    opacity: 1;
+}
+
+
+/* Small floating movement */
+
+@keyframes teacherFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-0.3deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(0.3deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 767.98px) {
+
+    .teacher-wrapper {
+        width: min(82%, 380px);
+        margin-top: 2rem;
+    }
+
+}

@@ -1,0 +1,1829 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --retro-dark: #171d17;
+
+    --retro-paper: #fffdf6;
+
+    --retro-soft: #f7f4ea;
+
+    --retro-border: #24313a;
+
+    --retro-muted: #69747b;
+
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    overflow-x: hidden;
+
+    background: var(--retro-paper);
+
+    color: var(--retro-dark);
+
+}
+
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    background: rgba(255, 253, 246, 0.92);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid rgba(36, 49, 58, 0.1);
+
+    transition:
+        box-shadow 0.3s ease,
+        padding 0.3s ease;
+
+}
+
+
+.navbar.navbar-scrolled {
+
+    box-shadow:
+        0 10px 30px rgba(36, 49, 58, 0.09);
+
+}
+
+
+.navbar-brand {
+
+    color: var(--retro-dark);
+
+    font-weight: 800;
+
+    letter-spacing: -0.03em;
+
+}
+
+
+.navbar .nav-link {
+
+    position: relative;
+
+    color: var(--retro-dark);
+
+    font-weight: 600;
+
+}
+
+
+.navbar .nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--bs-primary);
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+
+}
+
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+
+    width: 60%;
+
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.lesson-hero {
+
+    position: relative;
+
+    min-height: 88svh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 6rem 0;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(120, 194, 173, 0.33),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(243, 150, 154, 0.18),
+            transparent 30%
+        ),
+
+        var(--retro-paper);
+
+}
+
+
+
+/* =========================================================
+   RETRO GRID
+========================================================= */
+
+.retro-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(36, 49, 58, 0.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(36, 49, 58, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        42px 42px;
+
+    pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+.lesson-label,
+.section-label {
+
+    display: inline-block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+}
+
+
+.lesson-label {
+
+    padding:
+        0.65rem 1rem;
+
+    border:
+        2px solid var(--retro-dark);
+
+    border-radius:
+        50px;
+
+    background:
+        var(--bs-primary);
+
+    box-shadow:
+        4px 4px 0
+        var(--retro-dark);
+
+}
+
+
+.lesson-title {
+
+    margin:
+        2rem 0 1.5rem;
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            8.4rem
+        );
+
+    font-weight: 900;
+
+    line-height: 0.83;
+
+    letter-spacing:
+        -0.075em;
+
+}
+
+
+.animated-line {
+
+    display: block;
+
+}
+
+
+.accent-line {
+
+    color:
+        var(--bs-primary);
+
+}
+
+
+.hero-description {
+
+    max-width: 630px;
+
+    margin-bottom:
+        2rem;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.25rem
+        );
+
+    line-height: 1.75;
+
+}
+
+
+.hero-button {
+
+    border:
+        2px solid var(--retro-dark);
+
+    box-shadow:
+        5px 5px 0
+        var(--retro-dark);
+
+}
+
+
+
+/* =========================================================
+   ANIMATED CHARACTERS
+========================================================= */
+
+.animated-character {
+
+    display: inline-block;
+
+    opacity: 0;
+
+    transform:
+        translateY(50px)
+        rotate(6deg);
+
+    animation:
+        characterEntrance
+        0.7s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        )
+        forwards;
+
+}
+
+
+@keyframes characterEntrance {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            rotate(6deg);
+
+    }
+
+
+    70% {
+
+        transform:
+            translateY(-5px)
+            rotate(-1deg);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FLOATING WORDS
+========================================================= */
+
+.floating-word {
+
+    position: absolute;
+
+    z-index: 1;
+
+    color:
+        rgba(36, 49, 58, 0.07);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight: 900;
+
+    pointer-events: none;
+
+    animation:
+        floatWord
+        5s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+.word-1 {
+
+    top: 15%;
+    left: 5%;
+
+    font-size: 4rem;
+
+}
+
+
+.word-2 {
+
+    top: 18%;
+    right: 9%;
+
+    font-size: 5rem;
+
+    animation-delay:
+        -2s;
+
+}
+
+
+.word-3 {
+
+    bottom: 14%;
+    left: 35%;
+
+    font-size: 4rem;
+
+    animation-delay:
+        -1s;
+
+}
+
+
+.word-4 {
+
+    bottom: 10%;
+    right: 6%;
+
+    font-size: 3.5rem;
+
+    animation-delay:
+        -3s;
+
+}
+
+
+.word-5 {
+
+    top: 40%;
+    right: 40%;
+
+    font-size: 7rem;
+
+}
+
+
+@keyframes floatWord {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(-4deg);
+
+    }
+
+
+    to {
+
+        transform:
+            translateY(-25px)
+            rotate(4deg);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RETRO PAPER
+========================================================= */
+
+.retro-paper {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 360px;
+
+    margin-inline: auto;
+
+    padding:
+        3rem 2.5rem;
+
+    background:
+        #fff8d9;
+
+    border:
+        2px solid
+        var(--retro-dark);
+
+    box-shadow:
+        12px 12px 0
+        var(--retro-dark);
+
+    transform:
+        rotate(3deg);
+
+}
+
+
+.paper-pin {
+
+    position: absolute;
+
+    top: 12px;
+    left: 50%;
+
+    color:
+        var(--bs-secondary);
+
+    font-size: 1.5rem;
+
+}
+
+
+.paper-small {
+
+    margin-bottom:
+        0.3rem;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.retro-paper h2 {
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5rem
+        );
+
+    font-weight: 900;
+
+    letter-spacing:
+        -0.06em;
+
+}
+
+
+.retro-paper ul {
+
+    padding-left:
+        1.2rem;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight: 700;
+
+    line-height:
+        2;
+
+}
+
+
+.paper-pencil {
+
+    position: absolute;
+
+    right: -20px;
+    bottom: -30px;
+
+    font-size: 5rem;
+
+    transform:
+        rotate(-25deg);
+
+}
+
+
+
+/* =========================================================
+   SCROLL MESSAGE
+========================================================= */
+
+.scroll-message {
+
+    position: absolute;
+
+    right: 2rem;
+    bottom: 2rem;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.15em;
+
+    writing-mode:
+        vertical-rl;
+
+    animation:
+        scrollMovement
+        1.5s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes scrollMovement {
+
+    to {
+
+        transform:
+            translateY(10px);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.retro-marquee {
+
+    overflow: hidden;
+
+    padding:
+        0.85rem 0;
+
+    color: white;
+
+    background:
+        var(--retro-dark);
+
+    border-top:
+        5px solid
+        var(--bs-primary);
+
+    border-bottom:
+        5px solid
+        var(--bs-secondary);
+
+}
+
+
+.retro-marquee-track {
+
+    width:
+        max-content;
+
+    white-space:
+        nowrap;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight: 700;
+
+    letter-spacing:
+        0.13em;
+
+    animation:
+        marqueeMovement
+        25s
+        linear
+        infinite;
+
+}
+
+
+@keyframes marqueeMovement {
+
+    to {
+
+        transform:
+            translateX(-50%);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.lesson-section,
+.process-section,
+.structure-section,
+.summary-section,
+.final-section {
+
+    padding:
+        clamp(
+            5rem,
+            9vw,
+            8rem
+        )
+        0;
+
+}
+
+
+.section-number {
+
+    margin-bottom:
+        1rem;
+
+    color:
+        var(--bs-primary);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            7rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+}
+
+
+.section-title {
+
+    margin-top:
+        0.6rem;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4.7rem
+        );
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing:
+        -0.06em;
+
+}
+
+
+.section-description {
+
+    margin-top:
+        1.5rem;
+
+    font-size:
+        1.1rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+
+/* =========================================================
+   DEFINITION
+========================================================= */
+
+.definition-card {
+
+    position: relative;
+
+    padding:
+        clamp(
+            2rem,
+            5vw,
+            4rem
+        );
+
+    background:
+        white;
+
+    border:
+        2px solid
+        var(--retro-dark);
+
+    border-radius:
+        24px;
+
+    box-shadow:
+        10px 10px 0
+        var(--retro-dark);
+
+}
+
+
+.definition-symbol {
+
+    color:
+        var(--bs-primary);
+
+    font-size:
+        7rem;
+
+    font-family:
+        Georgia,
+        serif;
+
+    line-height:
+        0.4;
+
+}
+
+
+.definition-card p {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            1.3rem,
+            3vw,
+            2rem
+        );
+
+    font-weight:
+        700;
+
+    line-height:
+        1.5;
+
+}
+
+
+
+/* =========================================================
+   WRITING PROCESS
+========================================================= */
+
+.process-section {
+
+    background:
+        var(--retro-soft);
+
+}
+
+
+.process-card {
+
+    position: relative;
+
+    height: 100%;
+
+    padding:
+        2rem;
+
+    background:
+        white;
+
+    border:
+        2px solid
+        var(--retro-dark);
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        6px 6px 0
+        var(--retro-dark);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.process-card:hover {
+
+    transform:
+        translate(
+            -4px,
+            -4px
+        );
+
+    box-shadow:
+        10px 10px 0
+        var(--retro-dark);
+
+}
+
+
+.process-number {
+
+    position: absolute;
+
+    top: 1rem;
+    right: 1.2rem;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight:
+        900;
+
+    color:
+        var(--bs-primary);
+
+}
+
+
+.process-icon {
+
+    margin-bottom:
+        1rem;
+
+    font-size:
+        3rem;
+
+}
+
+
+.process-card h3 {
+
+    font-weight:
+        800;
+
+}
+
+
+.process-card p {
+
+    margin: 0;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* =========================================================
+   REPORT
+========================================================= */
+
+.report-section {
+
+    background:
+        var(--retro-paper);
+
+}
+
+
+.report-card {
+
+    overflow:
+        hidden;
+
+    background:
+        white;
+
+    border:
+        2px solid
+        var(--retro-dark);
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        10px 10px 0
+        var(--retro-dark);
+
+}
+
+
+.report-card-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        1rem 1.5rem;
+
+    color:
+        var(--retro-dark);
+
+    background:
+        var(--bs-secondary);
+
+    border-bottom:
+        2px solid
+        var(--retro-dark);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight:
+        800;
+
+}
+
+
+.report-card-body {
+
+    padding:
+        clamp(
+            2rem,
+            5vw,
+            4rem
+        );
+
+}
+
+
+.mini-label {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.14em;
+
+}
+
+
+.report-card-body h3 {
+
+    margin:
+        0.5rem 0 1.5rem;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.5rem
+        );
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.05em;
+
+}
+
+
+.report-card-body p {
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+.report-tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        0.7rem;
+
+    margin-top:
+        2rem;
+
+}
+
+
+.report-tags span {
+
+    padding:
+        0.5rem 0.8rem;
+
+    background:
+        var(--bs-primary);
+
+    border:
+        2px solid
+        var(--retro-dark);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        800;
+
+}
+
+
+
+/* =========================================================
+   REPORT STRUCTURE
+========================================================= */
+
+.structure-section {
+
+    background:
+        var(--retro-dark);
+
+    color:
+        white;
+
+}
+
+
+.structure-heading {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto 5rem;
+
+}
+
+
+.structure-heading p {
+
+    margin-top:
+        1.5rem;
+
+    font-size:
+        1.1rem;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+}
+
+
+.structure-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        120px 1fr;
+
+    gap:
+        2rem;
+
+    padding:
+        3rem 0;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.17
+        );
+
+}
+
+
+.structure-row:last-child {
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.17
+        );
+
+}
+
+
+.structure-marker {
+
+    color:
+        var(--bs-primary);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        3.8rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.structure-name {
+
+    color:
+        var(--bs-primary);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.structure-information h3 {
+
+    margin:
+        0.5rem 0 1rem;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
+
+    font-weight:
+        900;
+
+}
+
+
+.structure-information > p {
+
+    max-width:
+        780px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+
+/* =========================================================
+   EXPRESSIONS
+========================================================= */
+
+.expression-box {
+
+    max-width:
+        850px;
+
+    margin-top:
+        2rem;
+
+    padding:
+        1.5rem;
+
+    color:
+        var(--retro-dark);
+
+    background:
+        var(--retro-paper);
+
+    border:
+        2px solid
+        white;
+
+    border-radius:
+        18px;
+
+}
+
+
+.expression-title {
+
+    display:
+        block;
+
+    margin-bottom:
+        1rem;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.14em;
+
+}
+
+
+.expression {
+
+    display:
+        flex;
+
+    gap:
+        1rem;
+
+    align-items:
+        flex-start;
+
+    padding:
+        0.8rem 0;
+
+    border-top:
+        1px dashed
+        rgba(
+            36,
+            49,
+            58,
+            0.3
+        );
+
+}
+
+
+.expression-icon {
+
+    color:
+        var(--bs-primary);
+
+    font-weight:
+        900;
+
+}
+
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-section {
+
+    background:
+        var(--retro-soft);
+
+}
+
+
+.summary-box {
+
+    padding:
+        clamp(
+            2rem,
+            5vw,
+            4rem
+        );
+
+    background:
+        var(--bs-primary);
+
+    border:
+        2px solid
+        var(--retro-dark);
+
+    border-radius:
+        24px;
+
+    box-shadow:
+        10px 10px 0
+        var(--retro-dark);
+
+}
+
+
+.summary-box h2 {
+
+    margin:
+        0.7rem 0 3rem;
+
+    font-size:
+        clamp(
+            2.4rem,
+            5vw,
+            4rem
+        );
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.05em;
+
+}
+
+
+.summary-flow {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        1rem;
+
+}
+
+
+.summary-step {
+
+    flex:
+        1;
+
+    text-align:
+        center;
+
+}
+
+
+.summary-step span {
+
+    display:
+        block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        2.5rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.summary-step strong,
+.summary-step small {
+
+    display:
+        block;
+
+}
+
+
+.summary-step strong {
+
+    margin:
+        0.5rem 0;
+
+}
+
+
+.summary-arrow {
+
+    font-size:
+        2rem;
+
+    font-weight:
+        900;
+
+}
+
+
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
+.final-section {
+
+    text-align:
+        center;
+
+}
+
+
+.final-symbol {
+
+    display:
+        block;
+
+    margin-bottom:
+        1rem;
+
+    color:
+        var(--bs-secondary);
+
+    font-size:
+        5rem;
+
+}
+
+
+.final-section h2 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            5rem
+        );
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.06em;
+
+}
+
+
+.final-section p {
+
+    max-width:
+        650px;
+
+    margin:
+        1.5rem auto 2rem;
+
+    font-size:
+        1.1rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+
+    padding:
+        2rem 0;
+
+    color:
+        white;
+
+    background:
+        var(--retro-dark);
+
+    border-top:
+        6px solid
+        var(--bs-primary);
+
+}
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(
+            45px
+        );
+
+    transition:
+
+        opacity
+        0.8s ease,
+
+        transform
+        0.8s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        );
+
+}
+
+
+.reveal-visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (
+    max-width:
+    991.98px
+) {
+
+    .lesson-hero {
+
+        min-height:
+            auto;
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-description {
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+
+    }
+
+
+    .retro-paper {
+
+        margin-top:
+            2rem;
+
+    }
+
+
+    .scroll-message {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+
+@media (
+    max-width:
+    767.98px
+) {
+
+    .lesson-title {
+
+        font-size:
+            clamp(
+                3.4rem,
+                18vw,
+                5.5rem
+            );
+
+    }
+
+
+    .floating-word {
+
+        opacity:
+            0.55;
+
+    }
+
+
+    .structure-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            0.5rem;
+
+    }
+
+
+    .structure-marker {
+
+        font-size:
+            2.7rem;
+
+    }
+
+
+    .summary-flow {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .summary-arrow {
+
+        transform:
+            rotate(90deg);
+
+    }
+
+
+    .definition-card,
+    .report-card,
+    .summary-box {
+
+        box-shadow:
+            6px 6px 0
+            var(--retro-dark);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}
